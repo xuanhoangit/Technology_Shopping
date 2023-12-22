@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Shop.Models.Address>
+    <div class="container w-75" style="min-height: 300px;">
+            <a href="/Customer/Address/Index" class="btn btn-danger mb-3">Thêm địa chỉ nhận hàng mới</a>
+            <h3 class="mb-3">Địa chỉ nhận hàng</h3>
+            <form asp-action="AddressDeliver" asp-area="Customer" asp-controller="Address">
+        <table class="table  px-3 py-3 border">
+            <thead>
+                <tr>
+                    <th class="col-1 text-center">Chọn</th>
+                    <th class="col-6">Địa chỉ giao hàng</th>
+                    <th class="col-2 text-center">Cập nhật địa chỉ</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                @foreach(var addr in Model){
+                    <tr>
+                        <td class="col-2 text-center"><input type="radio" class="" name="AddressId" value="@addr.Id"></td>
+                        <td class="">
+                            <p>@(addr.WardName + "-" + addr.DistrictName +"-"+ addr.ProvinceName)</p>
+                            <p>Số điện thoại: @addr.PhoneNumber</p>
+                            <p>Ghi chú : @addr.Note</p>
+                        </td>
+                        <td class="text-center">
+                            <a href="" class="btn"><i class="bi bi-pencil-square fs-2 text-warning"></i></a>
+                        </td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+                <button type="submit" class="btn btn-danger col-3 mx-auto">Tiếp tục</button>
+        </form>
+    </div>

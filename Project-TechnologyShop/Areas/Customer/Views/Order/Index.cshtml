@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Đơn hàng";
+}
+@model IEnumerable<Shop.ModelProduct.DisplayOrder>
+    <div style="min-height: 300px;"class="container ">
+        <h2 class="mb-3">Đơn hàng của bạn</h2>
+        @if(Model.Count()==0){
+            <span>Bạn chưa có đơn hàng nào</span>
+        }else{
+             @foreach(var order in Model){
+        <div class="border-bottom border rounded py-2 px-4 mb-3">
+            <div class="">
+                <span class="text-danger">Trạng thái: </span>
+                @if(order.Order.Status==1){
+                    <span class="text-success ms-3" style="font-weight:600;">Đang chờ</span>
+                }else if(order.Order.Status==2){
+                    <span class="text-success ms-3" style="font-weight:600;">Đơn giao</span>
+                }
+            </div>
+            <div class="py-3 ">
+                <div class="" style="max-width:100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                <div class="d-flex">
+                    <span class="text-danger me-3">Đơn hàng: </span>
+                    <div class="d-flex flex-column">
+                @foreach(var item in order.ListOrderDetail){
+                   
+                       <div class="d-flex">
+                         <p class="itemName" style="font-weight:400;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;" title="@item.ProductName">@item.ProductName</p>
+                        <p>. Sl(@item.Quantity). </p>
+                       </div>
+                }   
+                    </div>
+                </div>
+
+                </div>
+                        <div class="mb-3">
+                            <span class="text-danger me-3">Thành tiền: </span>
+                            <span class="money text-success" style="font-weight:400;">@order.Order.Total_Price</span>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-danger">Địa chỉ giao hàng: </span>   
+                            <span style="font-weight:400;">@(order.Address.WardName+"-"+order.Address.DistrictName+"-"+order.Address.ProvinceName)</span>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-danger">Số điện thoại:</span>
+                            <span style="font-weight:400;">@order.Address.PhoneNumber</span>
+                        </div>
+                        <div class="mb-3"> 
+                            <span class="text-danger">Ngày tạo:</span>
+                            <span style="font-weight:400;">@order.Order.CreateAt.ToString("dd-MM-yyyy HH 'giờ' mm 'phút'")</span>
+                        </div>
+            </div>
+        
+        </div> 
+        }
+      
+        
+        }
+       
+    </div>
+    @section Scripts {
+        @{string cssmd="@media";}
+        <script>
+        </script>
+    }

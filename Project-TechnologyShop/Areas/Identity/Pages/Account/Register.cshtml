@@ -1,0 +1,109 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row body_register-container container col-md-6 mx-auto">
+    <div class="register-container">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h1 class="col  text-center">Đăng ký</h1>
+            <h3 class="col">Tạo tài khoản mới</h3>
+            <div class="px-2 py-2">
+                <span asp-validation-for="Input.Ho"></span>
+                <span asp-validation-for="Input.Ten"></span>
+                <span asp-validation-for="Input.NgaySinh"></span>
+                <span asp-validation-for="Input.Email"></span>
+                <span asp-validation-for="Input.PhoneNumber"></span>
+                <span asp-validation-for="Input.GioiTinh"></span>
+                <span asp-validation-for="Input.Password"></span>
+                <span asp-validation-for="Input.ConfirmPassword"></span>
+            </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="form-group col">
+                        <label asp-for="Input.Ho"></label>
+                        <input asp-for="Input.Ho"  class="form-control" required>
+                        </div>
+                        <div class="form-group col">
+                        <label asp-for="Input.Ten"></label>
+                        <input asp-for="Input.Ten"  class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="d-flex  justify-content-between">
+                        <div class="form-group col">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" required>
+                        </div>
+                        <div class="form-group col">
+                        <label asp-for="Input.PhoneNumber"></label>
+                        <input asp-for="Input.PhoneNumber" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3" style="border-bottom:1px dotted #ccc ;">
+                        <div class="form-group col">
+                        <label asp-for="Input.NgaySinh"></label>
+                        <input asp-for="Input.NgaySinh"  class="form-control" required>
+                        </div>
+                        <div class="form-group col">
+                        <label asp-for="Input.GioiTinh"></label>
+                        <select  asp-for="Input.GioiTinh" class="form-control py-1" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group col">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" required></input>
+                    </div>
+                    <div class="form-group col">
+                        <label asp-for="Input.ConfirmPassword"></label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" required></input>
+                    </div>
+             <div class="form-group col">
+                        <button id="registerSubmit" type="submit" class="btn btn-danger btn-block ">Đăng ký</button>
+                    </div>
+            <div class="form-footer">
+            <p>Nếu quý khách đã có tài khoản? <a href="#" class="text-danger">Đăng nhập ngay</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2 d-none">
+        <section>
+            <h3>Use another service to register.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+                            about setting up this ASP.NET application to support logging in via external services</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    
+    </div>
+    
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

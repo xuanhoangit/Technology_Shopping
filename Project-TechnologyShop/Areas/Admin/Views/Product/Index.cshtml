@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Shop.ModelProduct.DisplayProductDetail>
+    <div id="showImage" ></div>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Giá giảm</th>
+      <th scope="col">Giá bán</th>
+      <th scope="col">Còn lại</th>
+      <th scope="col">Trạng thái</th>
+    </tr>
+  </thead>
+  <tbody>
+    @{int i=1;}
+    @foreach(var product in Model){
+        string idToZoom="id"+product.Product.Id.ToString();
+        <tr>
+        <th scope="row">@(i++)</th>
+        <td  class="col-6">
+            <span>@product.Product.Name</span>
+            <div id="@idToZoom">
+                @foreach(var media in product.ProductMedias){
+                    <img src="~/images/ProductMedia/@media.Image" onclick="ClickZoom(this,'@idToZoom')" width="50px" height="50px" style="object-fit:cover;">
+                }
+            </div>
+        </td>
+        <td class="money">@product.Product.Price</td>
+        <td class="money">@product.Product.Sale</td>
+        <td>@product.Product.Quantity</td>
+        @if(product.Product.Status==1){
+            <td class="text-success">Hoạt động</td>
+        }else if(product.Product.Status==2){
+            <td class="text-danger">Vô hiệu</td>
+        }
+        </tr>
+    }
+    
+   
+  </tbody>
+</table>
+    

@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "ViewOrderCanceled";
+}
+@model IEnumerable<Shop.ModelProduct.DisplayOrder>
+<h2>Có @Model.Count() đơn hàng đã bị hủy</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">#</th>
+      <th scope="col" class="text-center">Tổng hóa đơn</th>
+      <th scope="col" class="text-center">Sản phẩm</th>
+      @* <th scope="col" class="text-center">Xử lý đơn</th> *@
+    </tr>
+  </thead>
+  <tbody>
+       <tr></tr>
+    @{int i=1;}
+    @foreach(var order in Model){
+        <tr style="border:2px solid;">
+            <th scope="row">@(i++)</th>
+            <td class="money text-center">@order.Order.Total_Price</td>
+            <td class="col-8">    @{int j=1;}
+                    @foreach(var product in order.ListOrderDetail){
+                        <div class="d-flex justify-content-between mb-2 px-2 py-2" style="border:1px solid">
+                            <span>@(j++)/</span>
+                            <span class="col-6">@product.ProductName</span>
+                            <div class="">
+                                <span>Số lượng @product.Quantity</span><br>
+                                <span>Trong kho còn: @product.Kho</span>
+                            </div>
+                            <div>Tiền sản phẩm: <span class="money">@product.UnitPrice</span></div>
+                        </div>
+                    }
+                    <div>
+                       Khách hàng: @order.Address.CustomerName/ Địa chỉ: @(order.Address.WardName+"-"+order.Address.DistrictName+"-"+order.Address.ProvinceName+"/ Sđt: "+order.Address.PhoneNumber)
+                    </div>
+            </td>
+            @* <td>
+                <a href="/Admin/Order/Confirm?orderId=@order.Order.Id" class="btn btn-success">Chấp nhận</a>
+                <a href="/Admin/Order/Cancel?orderId=@order.Order.Id" class="btn btn-danger">Hủy</a>
+            </td> *@
+        </tr>
+    }
+    
+  </tbody>
+</table>
+
+
+

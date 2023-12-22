@@ -1,0 +1,113 @@
+@{
+    ViewData["Title"] = "Add";
+
+}
+@model Shop.ModelAdmin.ProductAdd;
+<div class="container mt-5">
+<h2>Thêm sản phẩm</h2>
+<form asp-action="Add" asp-area="Admin" asp-controller="Product" enctype="multipart/form-data">
+    <div class="d-lg-flex justify-content-between">
+        @* InputProduct *@
+        <div class="col-lg-4 col-sm-12">
+            <div class="form-group">
+                <label asp-for="Product.Name">Tên sản phẩm</label>
+                <input asp-for="Product.Name" class="form-control"  placeholder="Nhập tên sản phẩm">
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Price">Giá gốc</label>
+                <input asp-for="Product.Price" class="form-control"  placeholder="Nhập giá gốc">
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Sale">Giá sale</label>
+                <input asp-for="Product.Sale" class="form-control"  placeholder="Nhập giá bán ra">
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Quantity">Số lượng nhập kho</label>
+                <input asp-for="Product.Quantity" class="form-control"  placeholder="Có bao nhiêu sản phẩm?">
+            </div>
+            <div class="form-select mb-3">
+                <label asp-for="Product.CategoryId">Danh mục của sản phẩm</label>
+                <select asp-for="Product.CategoryId" class="form-control" >
+                    <option value="">Chọn</option>
+                    @foreach(var category in Model.ListCategory){
+                        <option value="@category.Id">@(category.Name.ToUpper())</option>
+                    }
+                </select>
+            </div>
+            <div class="form-select mb-3">
+                <label asp-for="Product.BrandId">Thương hiệu</label>
+                <select asp-for="Product.BrandId" class="form-control" >
+                    <option value="">Chọn</option>
+                    @foreach(var brand in Model.ListBrand){
+                        <option value="@brand.Id">@(brand.Name.ToUpper())</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-danger">Hoàn tất thêm sản phẩm</button>
+        </div>
+        @* InputImage *@
+        <div class="col-lg-8 col-sm-12">
+            <div class="mb-3">
+                @* InputDecription *@
+                <label asp-for="Product.ProductDecriptions">Thêm mô tả cho sản phẩm</label>
+                <div id="decription">
+
+                </div>
+                <span class="btn btn-danger" onclick="CreateMoreInputDecription()"><i class="bi bi-plus-square me-3"></i> Thêm 1 mô tả</span>
+            </div>
+            <div>
+                <label asp-for="Product.ListFiles" class="">
+                     <span class="btn btn-secondary"><i class="bi bi-upload text-center" style="-webkit-text-stroke:1px;"></i>  Tải lên hình ảnh</span>
+                      
+                    <div class="d-flex flex-wrap justify-content-between" style="max-width:100%;" id="displayImageFile">
+
+                    </div>
+                    <input asp-for="Product.ListFiles" class="d-none" onchange="SelectInputFile(this,'displayImageFile')">
+                </label>
+            </div>
+        </div>
+    </div>
+</form>
+    
+</div>
+@section Scripts{
+    <script>
+       function CreateMoreInputDecription(){
+            var decription=document.querySelector("#decription");
+                var input=document.createElement("input");
+                input.name="ProductDecriptions";
+                input.placeholder="Viết gì đó về sản phẩm";
+                input.setAttribute("class","form-control mb-3 w-sm-100")
+            decription.appendChild(input)
+       }
+
+
+       function SelectInputFile(fileselect,displayImage){
+            
+            const fileInput = fileselect;
+            const selectedImage = document.getElementById(displayImage);
+            const file=fileInput.files;
+            file.forEach(function (x){
+                if(file && x){
+                   
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        
+                        var img=document.createElement("img");
+                        img.src = e.target.result;
+                        img.style.width="45%";
+                        img.style.height="auto";
+                        img.style.objectFit="contain";
+                        img.style.border="1px solid #fff"
+                        img.setAttribute("class","mx-2")
+                        selectedImage.appendChild(img);
+                    }
+                    reader.readAsDataURL(x);
+                     selectedImage.style.border="1px solid #fff";
+                    selectedImage.style.maxWidth="fit-content";
+                    }
+            })
+          
+        }
+    </script>
+}

@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+@model Shop.ModelProduct.DisplayHomeCustomer;
+<div class="">
+
+
+    <!-- Carousel Slide -->
+    <div id="myCarousel" style="overflow: hidden;" class="carousel slide   mb-3"  data-ride="carousel">
+      <div class="position-absolute bg-white displaycategory"  style="height:100%;z-index:10;left:10%;">
+        
+          <div class="position-relative"  >
+            <ul  id="container_category" class="  d-block h-100 px-3 py-3 border "  style="list-style-type:none;max-width:fit-content;">
+            <div class="border-bottom category" style="font-weight:600;"><i class="bi bi-menu-button-wide me-2"></i>Danh mục sản phẩm</div>
+              <a href="/Customer/Product/DisplayProduct?request=1" style="text-decoration:none;" class="border-bottom category px-2 d-flex text-dark">
+                <span class="my-auto">SẢN PHẨM MỚI</span>
+              </a>
+             <a href="/Customer/Product/DisplayProduct?request=2" style="text-decoration:none;" class="border-bottom category px-2 d-flex text-dark">
+               <span class="my-auto" >SẢN PHẨM BÁN CHẠY</span>
+             </a >
+             <a href="/Customer/Product/DisplayProduct?request=3" style="text-decoration:none;" class="border-bottom category px-2 d-flex  text-dark">
+                <span  class="my-auto">SẢN PHẨM ƯU ĐÃI</span>
+              </a>
+              @foreach(var category in Model.Categories){
+                  <div class="category "  style="display:flex;">
+                    <li   class="test d-flex border-bottom position-relative px-2" style="width:250px;letter-spacing: 1px;font-size:12px;font-weight:400;">
+                      <a href="" class="my-auto">@(category.Name.ToUpper()) <i class='fas fa-angle-right position-absolute end-0 pe-2'></i></a> 
+                    </li>
+                        <div class="position-absolute" style="width:270px;height:100%;">
+
+                        </div>
+                            <div  style="width:800px;" class="brand bg-white position-absolute start-100 border">
+                              <div class=" d-flex flex-wrap mx-3 my-3 brand-item">
+                            @foreach(var brand in category.ListBrand){
+                                  <a href="/Customer/Product/DisplayProductByCategory?CategoryId=@category.Id&&BrandId=@brand.Id" class="w-50">@(brand.Name.ToUpper())</a>
+                                }
+                              </div>
+                          </div>
+
+                  </div>
+              }
+          </ul>
+          
+
+          </div>
+      </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="~/images/Slides/slide1.jpg" class="d-block w-100" style="height: auto; " alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="~/images/Slides/slide2.jpg" class="d-block w-100" style="height: auto;" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="~/images/Slides/slide3.jpg" class="d-block w-100" style="height: auto; " alt="Slide 3">
+          </div>
+          <div class="carousel-item">
+            <img src="~/images/Slides/slide4.jpg" class="d-block w-100" style="height: auto; " alt="Slide 4">
+          </div>
+          <div class="carousel-item">
+            <img src="~/images/Slides/slide5.jpg" class="d-block w-100" style="height: auto; " alt="Slide 5">
+          </div>
+          <div class="carousel-item">
+            <img src="~/images/Slides/slide6.jpg" class="d-block w-100" style="height: auto; " alt="Slide 6">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <div class="carousel-prev d-flex align-items-center ">
+              <span class="carousel-control-prev-icon mx-auto" aria-hidden="true"></i></span>
+          </div>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <div class="carousel-next d-flex align-items-center">
+              <span class="carousel-control-next-icon mx-auto" aria-hidden="true"></i></span>
+          </div>
+          <span class="sr-only">Next</span>
+        </a>
+        <!-- Indicators -->
+        <ol class="carousel-indicators pt-5">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+      </div>
+
+    <!-- New Arrived Section -->
+    <h1 class="text-center py-5" style="-webkit-text-stroke: 2px rgb(220,53,69);font-weight: bold;color: rgb(220,53,69);">Sản phẩm mới</h1>
+      <section class="container_new_arrival mb-3 px-lg-5 pt-4" style="background-color:hsla(14, 97%, 73%, 0.486);">
+       <div class="d-flex flex-wrap mb-3">
+        @foreach(var product in Model.NewArrival){
+          <div  class="px-2 py-2 products" style="border: 1px solid rgb(240,242,245);">
+           <a href="/Customer/Product/Detail?id=@product.Id"><img src="~/images/ProductMedia/@product.Image" class="img-fluid" alt="Product Image"></a>
+           <div class="mt-3">
+               <h5 style="text-align: left; font-weight: bold;width:100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;" title="@product.Name"><a href="/Customer/Product/Detail?id=@product.Id" class="product_link text-dark">@product.Name</a></h5>
+               <div class="d-flex justify-content-between">
+                   <div>
+                       @if(product.Price>product.Sale){
+                        <span class="text-muted price money" style="">@product.Price</span>
+                       }
+                       <span class="text-danger sale money" style="font-weight: 500;">@product.Sale</span>
+                   </div>
+                   <span onclick="AddToCart('@product.Id')" class="btn btn-danger"><i class="bi bi-cart3"></i></span>
+               </div>
+           </div>
+       </div>
+      }
+         
+       </div>
+       <h6 class="viewall px-2 py-2  border border-danger rounded text-center mx-auto col-md-1"><a href="/Customer/Product/DisplayProduct?request=1" class=" text-danger w-100">Xem tất cả</a></h6>
+   </section>
+
+   
+     <!-- Top sản phẩm bán chayk -->
+     <h1 class="text-center py-5" style="-webkit-text-stroke: 2px rgb(220,53,69);font-weight: bold;color: rgb(220,53,69);">Top sản phẩm bán chạy nhất</h1>
+     <section class="container_new_arrival mb-3 px-lg-5 pt-4" style="background-color:hsla(14, 97%, 73%, 0.486);">
+       <div class="d-flex flex-wrap mb-3">
+        @foreach(var product in Model.BestSeller){
+         <div class="px-2 py-2 products" style="border: 1px solid rgb(240,242,245); ">
+           <a href="/Customer/Product/Detail?id=@product.Id"><img src="~/images/ProductMedia/@product.Image" class="img-fluid" alt="Product Image"></a>
+           <div class="mt-3">
+               <h5 style="text-align: left; font-weight: bold;width:100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;" title="@product.Name"><a href="/Customer/Product/Detail?id=@product.Id" class="product_link text-dark">@product.Name</a></h5>
+               <div class="d-flex justify-content-between">
+                   <div>
+                       <span class="text-muted money" style="text-decoration: line-through; font-size: 12px; font-weight: 400;">@product.Price</span>
+                       <span class="text-danger money" style="font-weight: 500;">@product.Sale</span>
+                   </div>
+                   <span onclick="AddToCart('@product.Id')" class="btn btn-danger"><i class="bi bi-cart3"></i></span>
+               </div>
+           </div>
+       </div>
+         }
+       </div>
+       <h6 class="viewall px-2 py-2  border border-danger rounded text-center mx-auto col-md-1"><a href="/Customer/Product/DisplayProduct?request=2" class=" text-danger w-100">Xem tất cả</a></h6>
+   </section>
+     <!-- Danh sách sản phẩm -->
+     <h1 class="text-center py-5" style="-webkit-text-stroke: 2px rgb(220,53,69);font-weight: bold;color: rgb(220,53,69);">Sản phẩm ưu đãi</h1>
+     <section class="container_new_arrival mb-3 px-lg-5 pt-4" style="background-color:hsla(14, 97%, 73%, 0.486);">
+       <div class="d-flex flex-wrap mb-3">
+        @foreach(var product in Model.FifteenProduct){
+          <div  class="px-2 py-2 products" style="border: 1px solid rgb(240,242,245); ">
+           <a href="/Customer/Product/Detail?id=@product.Id"><img src="~/images/ProductMedia/@product.Image" class="img-fluid" alt="Product Image"></a>
+           <div class="mt-3">
+               <h5 style="text-align: left; font-weight: bold;width:100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;" title="@product.Name"><a href="/Customer/Product/Detail?id=@product.Id" class="product_link text-dark">@product.Name</a></h5>
+               <div class="d-flex justify-content-between">
+                   <div>
+                       @if(product.Price>product.Sale){
+                        <span class="text-muted price money" style="">@product.Price</span>
+                       }
+                       <span class="text-danger sale money" style="font-weight: 500;">@product.Sale</span>
+                   </div>
+                   <span onclick="AddToCart('@product.Id')" class="btn btn-danger"><i class="bi bi-cart3"></i></span>
+               </div>
+           </div>
+       </div>
+      }
+         
+       </div>
+       <h6 class="viewall px-2 py-2  border border-danger rounded text-center mx-auto col-md-1"><a href="/Customer/Product/DisplayProduct?request=3" class=" text-danger w-100">Xem tất cả</a></h6>
+   </section>
+</div>
+@section Scripts{
+  <script>
+      var listcategory=document.querySelectorAll("#container_category > .category");
+      var percent=100/listcategory.length;
+      listcategory.forEach(function(x){
+          x.style.height=percent+"%";
+      })
+
+
+  </script>
+}

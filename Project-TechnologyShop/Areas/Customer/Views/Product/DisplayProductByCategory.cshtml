@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Sản phẩm";
+}
+@model Shop.ModelProduct.DisplayProductByCategory;
+ <div class="container ">
+    <h2 style="color: rgb(66, 71, 75);" class="py-3 ms-3">@Model.CategoryName.ToUpper() - @Model.BrandName.ToUpper()</h2>
+     
+        <form asp-area="Customer" asp-action="DisplayProductByCategory" asp-controller="Product" method="get">
+    <div class="mb-3 d-flex flex-wrap listBrandProduct">
+        @foreach(var brand in Model.ListBrand){
+            <a class="btn btn-danger mx-1" href="/Customer/Product/DisplayProductByCategory?CategoryId=@brand.CategoryId&&BrandId=@brand.BrandId">@brand.BrandName</a>
+        }
+    </div>
+
+
+            <div id="search_product" class=" d-flex border-2 border mx-2 mb-3 rounded">
+                <input type="text" name="search" id="search" style="outline: none; border: none;"  class="py-1 col" placeholder="Tìm kiếm sản phẩm">
+                <button type="submit" class="bi bi-search  px-4 my-auto search btn btn-danger"></button>
+            </div>
+            <input type="hidden" name="CategoryId" value="@Model.CategoryId">
+            <input type="hidden" name="BrandId" value="@Model.BrandId">
+        </form>
+<div style="min-height:300px;">
+    @if(Model.Product.Count()==0){
+    <span>Không có sản phẩm nào</span>
+}
+else{
+    
+   
+        <div class="d-flex flex-wrap">
+        @foreach(var product in Model.Product){
+             <div  class="px-2 py-2 products" style="border: 1px solid rgb(240,242,245);">
+           <a href="/Customer/Product/Detail?id=@product.Id"><img src="~/images/ProductMedia/@product.Image" class="img-fluid" alt="Product Image"></a>
+           <div class="mt-3">
+               <h5 style="text-align: left; font-weight: bold;width:100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;" title="@product.Name"><a href="/Customer/Product/Detail?id=@product.Id" class="product_link text-dark">@product.Name</a></h5>
+               <div class="d-flex justify-content-between">
+                   <div>
+                       @if(product.Price>product.Sale){
+                        <span class="text-muted price money" style="">@product.Price</span>
+                       }
+                       <span class="text-danger sale money" style="font-weight: 500;">@product.Sale</span>
+                   </div>
+                   <span onclick="AddToCart('@product.Id')" class="btn btn-danger"><i class="bi bi-cart3"></i></span>
+               </div>
+           </div>
+       </div>
+        }
+        </div>
+    
+}
+</div>
+</div>

@@ -1,0 +1,137 @@
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+@model IEnumerable<Shop.Models.Cart>;
+<div class="container mt-3" style="min-height: 300px; overflow:hidden;">
+  @if(Model.Count()!=0){
+  <h3 class="mt-5 ">Có @Model.Count() sản phẩm trong giỏ hàng.</h3>
+  <span class="text-danger">@TempData["RequestChooseProduct"]</span>
+<form id="myForm" asp-action="Checkout" asp-controller="Order" asp-area="Customer" method="post">
+<div class="cart-sm">
+  @foreach(var item in Model){
+        string checkbox="check"+item.Id.ToString();
+        string subtotalId="subtotal"+checkbox;
+        string unitPrice="unitPrice"+item.ProductId.ToString();
+      <div class="border mb-3 py-2 px-2 item-sm" data-price="@item.Price">
+        <div>
+          <b >Chọn</b><input type="checkbox" name="order" id="@checkbox" value="@item.Id" class="checkbox" onchange="total()">
+        </div>
+        <div >
+          <b  >Sản phẩm</b><span  title="@item.ProductName">@item.ProductName</span>
+         </div>
+        <div>
+          <b  class="text-start">Số lượng</b><input  type="number" class="inputNumber"  onchange="updateTotal(this,'@checkbox','@item.Id')" min="1" value="@item.Quantity">
+        </div>
+        <div >
+          <b >Giá</b><span id="@subtotalId" class="subtotal money">@(item.Price*item.Quantity) </span>
+        </div>
+        <div>
+            <b >Xóa</b><a href="/Customer/Cart/DeleteItem?id=@item.Id"><i class="bi bi-trash text-danger"></i></a>
+          </div>
+      </div>
+      }
+</div>
+
+@* 
+<div class="cart-lg d-none">
+   
+  <table class="table border">
+    
+    <thead>
+      <tr>
+        <th scope="col">Chọn</th>
+        <th scope="col">Sản phẩm</th>
+        <th scope="col">Số lượng</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(var item in Model){
+        string checkbox="check"+item.Id.ToString();
+        string subtotalId="subtotal"+checkbox;
+        string unitPrice="unitPrice"+item.ProductId.ToString();
+      <tr class="" data-price="@item.Price">
+        <td >
+          <input type="checkbox" name="order" id="@checkbox" value="@item.Id" class="checkbox" onchange="total()">
+        </td>
+        <td title="@item.ProductName">
+         @item.ProductName
+         </td>
+        <td style="width:100px">
+          <input  type="number" class="inputNumber"  onchange="updateTotal(this,'@checkbox','@item.Id')" min="1" value="@item.Quantity"></td>
+        <td class="d-flex"><span id="@subtotalId" class="subtotal money">@(item.Price*item.Quantity) </span></td>
+        <td>
+          <a href="/Customer/Cart/DeleteItem?id=@item.Id"><i class="bi bi-trash text-danger"></i></a>
+          </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+ 
+</div> *@
+  <div class="col-lg-6">
+    <div class="d-flex mb-3">
+      <strong class="d-flex me-1">Tổng tiền: </strong>
+      <span id="total" class="text-success">0</span>
+    </div>
+    <button class="btn btn-success" type="submit">Thanh toán</button>
+     
+  </div>
+</form>
+ }else{
+    <div>
+      Chưa có sản phẩm nào trong giỏ hàng
+    </div>
+  }
+</div>
+@section Scripts{
+  <script>
+        var inputNumber=document.querySelectorAll(".inputNumber");
+        inputNumber.forEach(function (x){
+          x.style.width="60px";
+        })
+
+        function updateTotal(input,itemId,cartId) {
+        
+            var row = input.parentNode.parentNode;
+            var price = parseFloat(row.getAttribute('data-price'));
+            var quantity = parseInt(input.value);
+            var subtotal = price * quantity;
+            var formattedValue = subtotal.toLocaleString('vi-VN');
+            row.querySelector('.subtotal').textContent = formattedValue+"đ";
+
+            
+
+            var check=document.querySelector("#"+itemId)
+            if(check.checked){
+              total();
+            }
+            $.ajax({
+              type:"POST",
+              url:"/Customer/Cart/ChangeQuantity",
+              data:{id:cartId,n:quantity},
+              success:function(){
+                  
+              }
+            })
+        }
+        function total(){
+          var totalItem=0;
+            
+            var checkbox=document.querySelectorAll(".checkbox");
+            checkbox.forEach(function (x){
+              if(x.checked){
+                var subtotals = document.querySelector('#subtotal'+x.id);
+                totalItem+=parseInt(subtotals.innerText.replace(/[đ.]/g, ''));
+              }
+            })
+            console.log(totalItem)
+            if(totalItem==""){
+              totalItem="0"
+            }
+            document.getElementById('total').innerHTML = totalItem.toLocaleString('vi-VN')+"đ";
+        }
+    </script>
+
+}

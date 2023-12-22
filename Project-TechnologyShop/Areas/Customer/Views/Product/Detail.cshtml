@@ -1,0 +1,64 @@
+@model Shop.ModelProduct.DisplayProductDetail;
+@{
+    ViewData["Title"] =Model.Product.Name+ " - Detail";
+    
+}
+ <!-- Product Details Section -->
+  <section class="container product-details">
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="~/images/ProductMedia/@Model.ProductMedias[0].Image" width="100%" height="450px" style="object-fit: contain;" alt="Product Name" class="product-image">
+        <div class="d-flex justify-content-between imgProduct col">
+          @{
+            int width=100/Model.ProductMedias.Count();
+            string widthStr=width.ToString()+"%";
+          }
+            @foreach(var media in Model.ProductMedias){
+                
+                <img src="~/images/ProductMedia/@media.Image" width="@widthStr" height="150px" style="object-fit: cover;">
+            }
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h2>@Model.Product.Name</h2>
+        <p class="text-muted">Danh mục: @Model.Category.Name</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod libero eu lorem dignissim, id bibendum justo tristique.</p>
+        <div class="d-flex"><strong>Giá: </strong><p class="money price px-2"> @Model.Product.Price</p><p class="money sale">@Model.Product.Sale</p></div>
+        <p><strong>Trong kho còn:</strong> @Model.Product.Quantity</p>
+        <span onclick="AddToCart('@Model.Product.Id')" class="btn btn-danger mb-5"><i class="bi bi-cart3"></i> Thêm vào giỏ hàng</span>
+        <ul class="" style="font-size:14px;">
+            @foreach (var des in Model.ProductDecriptions){
+                <li class="text-muted">@des.Decription</li>
+            }
+        </ul>
+      </div>
+    </div>
+    
+  </section>
+
+ 
+ 
+@section Scripts {
+  <script>
+    //SelectImage và hiển thị trong product Detail
+    var listImg=document.querySelectorAll(".imgProduct img");
+    var product_image=document.querySelector(".product-image");
+    listImg[0].style.border="1px solid blue";
+    listImg.forEach(function (x){
+        x.addEventListener("click",function(){
+            product_image.src=x.src;
+            UnActive(listImg)
+        }) 
+    })
+    function UnActive(){
+        listImg.forEach(function (x){
+            if(x.src!=product_image.src){
+                x.style.border="none";
+            }
+            else{
+                x.style.border="1px solid blue";
+            }
+        })
+    }
+  </script>
+}

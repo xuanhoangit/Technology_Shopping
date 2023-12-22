@@ -1,0 +1,553 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Download\\TestDeploy\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Shop.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Shop.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\cssAdmin\\home.css",
+      "PackagePath": "staticwebassets\\cssAdmin\\home.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\css\\cart.css",
+      "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\css\\displayproductbycategory.css",
+      "PackagePath": "staticwebassets\\css\\displayproductbycategory.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\css\\loginPartial.css",
+      "PackagePath": "staticwebassets\\css\\loginPartial.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\css\\register.css",
+      "PackagePath": "staticwebassets\\css\\register.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\cssa\\apexcharts.css",
+      "PackagePath": "staticwebassets\\cssa\\apexcharts.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\cssa\\app-dark.css",
+      "PackagePath": "staticwebassets\\cssa\\app-dark.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\cssa\\app-rtl.css",
+      "PackagePath": "staticwebassets\\cssa\\app-rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\cssa\\daterangepicker.css",
+      "PackagePath": "staticwebassets\\cssa\\daterangepicker.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\cssa\\feather.css",
+      "PackagePath": "staticwebassets\\cssa\\feather.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\cssa\\simplebar.css",
+      "PackagePath": "staticwebassets\\cssa\\simplebar.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\fonts\\feather.eot",
+      "PackagePath": "staticwebassets\\fonts\\feather.eot"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\fonts\\feather.svg",
+      "PackagePath": "staticwebassets\\fonts\\feather.svg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\fonts\\feather.ttf",
+      "PackagePath": "staticwebassets\\fonts\\feather.ttf"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\fonts\\feather.woff",
+      "PackagePath": "staticwebassets\\fonts\\feather.woff"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\DoChoi.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\DoChoi.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\GiangSinh.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\GiangSinh.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\NgonTinhDamMy.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\NgonTinhDamMy.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\TamLinhLuanHoi.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\TamLinhLuanHoi.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\ThaoTungTamLy.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\ThaoTungTamLy.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\TheGioiPopMart.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\TheGioiPopMart.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\ThieuNhi.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\ThieuNhi.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\TieuThuyet.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\TieuThuyet.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\VanHocKinhDien.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\VanHocKinhDien.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Category\\XuHuongKinhTe.jpg",
+      "PackagePath": "staticwebassets\\images\\Category\\XuHuongKinhTe.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\2image1.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\2image1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\2image2.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\2image2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\2image3.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\2image3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\3image1.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\3image1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\3image2.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\3image2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-06LNIKkJHo4M5BeCvAoB.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-06LNIKkJHo4M5BeCvAoB.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-1Z3yoaSqNpp3CKw4BnwP.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-1Z3yoaSqNpp3CKw4BnwP.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-MsH19G2qFgly1lY13v6k.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-MsH19G2qFgly1lY13v6k.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-ObBwiSGAV1Uux4IjCsU3.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-ObBwiSGAV1Uux4IjCsU3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-RDZZfqWjpYx4RGcLEBxw.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-RDZZfqWjpYx4RGcLEBxw.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-dXClcDgwvskXPDg4jXkW.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-dXClcDgwvskXPDg4jXkW.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-hEJSNmODERbaJAmvXmJ4.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-hEJSNmODERbaJAmvXmJ4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-kyGoELmuzVCbLhkE8YVR.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-kyGoELmuzVCbLhkE8YVR.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-lCD308wAHLSflvW1aLJ7.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-lCD308wAHLSflvW1aLJ7.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-12-12-2023-lR4S5McwxKmB9s0hK67X.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-12-12-2023-lR4S5McwxKmB9s0hK67X.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-0m9QrimJdHJAh5Ehj7LT.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-0m9QrimJdHJAh5Ehj7LT.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-2ToSkL7tniLERsuQ84VF.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-2ToSkL7tniLERsuQ84VF.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-6mnIDKGo9XyXzCU2OhSN.jfif",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-6mnIDKGo9XyXzCU2OhSN.jfif"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-733MvjZQ59QlNxD1a9Ci.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-733MvjZQ59QlNxD1a9Ci.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-KLdPetpr1spnL1oWXVj7.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-KLdPetpr1spnL1oWXVj7.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-M40DKhaasBlDcNt5IQqi.jfif",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-M40DKhaasBlDcNt5IQqi.jfif"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-MQoYQwPla81vNlNH788f.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-MQoYQwPla81vNlNH788f.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-a6IWtH7KuZrdBGbaQLcX.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-a6IWtH7KuZrdBGbaQLcX.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-fnk20NX9m7GQShwboX4C.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-fnk20NX9m7GQShwboX4C.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-hXFceAKfx18djyIL73dq.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-hXFceAKfx18djyIL73dq.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-lUJAIcPgYAA5UhcXD2Pr.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-lUJAIcPgYAA5UhcXD2Pr.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-uN83LxM8b6pkiKupWQrA.jfif",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-uN83LxM8b6pkiKupWQrA.jfif"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-wY0u7wSipLt3e9YPfWnc.jfif",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-wY0u7wSipLt3e9YPfWnc.jfif"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-zHfZTmcwRkY2J87roO9d.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-zHfZTmcwRkY2J87roO9d.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\ProductMedia\\NameProject-16-12-2023-zOQWNvJwImnDMKkXS4YF.png",
+      "PackagePath": "staticwebassets\\images\\ProductMedia\\NameProject-16-12-2023-zOQWNvJwImnDMKkXS4YF.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\logo.jfif",
+      "PackagePath": "staticwebassets\\images\\Slides\\logo.jfif"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\logo.png",
+      "PackagePath": "staticwebassets\\images\\Slides\\logo.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\logoNoel.png",
+      "PackagePath": "staticwebassets\\images\\Slides\\logoNoel.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\slide1.jpg",
+      "PackagePath": "staticwebassets\\images\\Slides\\slide1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\slide2.jpg",
+      "PackagePath": "staticwebassets\\images\\Slides\\slide2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\slide2.png",
+      "PackagePath": "staticwebassets\\images\\Slides\\slide2.png"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\slide3.jpg",
+      "PackagePath": "staticwebassets\\images\\Slides\\slide3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\slide4.jpg",
+      "PackagePath": "staticwebassets\\images\\Slides\\slide4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\slide5.jpg",
+      "PackagePath": "staticwebassets\\images\\Slides\\slide5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\images\\Slides\\slide6.jpg",
+      "PackagePath": "staticwebassets\\images\\Slides\\slide6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\js\\apps.js",
+      "PackagePath": "staticwebassets\\js\\apps.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\js\\daterangepicker.js",
+      "PackagePath": "staticwebassets\\js\\daterangepicker.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\js\\simplebar.min.js",
+      "PackagePath": "staticwebassets\\js\\simplebar.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\jsa\\sites.js",
+      "PackagePath": "staticwebassets\\jsa\\sites.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Download\\TestDeploy\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Shop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Shop.props",
+      "PackagePath": "build\\Shop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Shop.props",
+      "PackagePath": "buildMultiTargeting\\Shop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Shop.props",
+      "PackagePath": "buildTransitive\\Shop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

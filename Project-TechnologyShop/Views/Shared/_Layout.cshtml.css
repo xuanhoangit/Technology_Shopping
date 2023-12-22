@@ -1,0 +1,258 @@
+﻿
+.parentsc600{
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+}
+
+
+/* TEst */
+body {
+  overflow: hidden;
+  margin: 0;
+  padding-top: 56px;
+}
+h1, h2, h3, p, ul, li, address {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+  .container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  }
+  
+  .logo img {
+  max-width: 100%;
+  height: auto;
+  }
+  
+
+  
+  .navigation li {
+    
+  margin-right: 20px;
+  }
+  
+  .navigation a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  }
+  
+  .navigation  a:hover {
+  /* color: rgb(255, 193, 111); */
+  }
+  .nav_product_hide{
+  background: rgb(240,242,245);
+  width: 800px;
+  height:200px;
+  display: none;
+  position: absolute; 
+  right: 0;
+  z-index: 2;
+  }
+
+
+  /* #nav_hover:hover .nav_product_hide{
+  display: flex;
+  flex-wrap: wrap;
+  padding:20px;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  } */
+  #nav_hover{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  }
+/*  
+  .nav_product_hide a{
+   color: black;
+  } */
+  /* .nav_product_hide a:hover{
+    color: #000;
+    text-decoration: underline;
+    background-color: rgb(173, 153, 141);
+  } */
+  [placeholder="Tìm kiếm sản phẩm"]{
+  font-size: 12px;
+  }
+  
+  .cta-buttons a {
+  margin-left: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  }
+  .btn-secondary {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #ff5722;
+  }
+  
+  .btn-secondary:hover {
+  background-color: rgb(255,87,34);
+  color: #fff;
+  }
+
+  /* footer */
+  .hard-footer {
+    background-color:rgb(220,53,69);
+    color: #fff;
+    padding: 40px 0;
+    }
+    
+    .container-footer {
+    width: 80%;
+    margin: 0 auto;
+    }
+    
+    .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    }
+    
+    .footer-section {
+  
+    margin-bottom: 20px;
+    }
+    
+    .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    }
+    
+    .footer-section p, .footer-section address {
+    font-size: 14px;
+    line-height: 1.5;
+    }
+    
+    ul {
+    list-style: none;
+    padding: 0;
+    }
+    
+    ul li {
+    margin-bottom: 8px;
+    }
+    
+    a {
+    color: #fff;
+    text-decoration: none;
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    }
+    
+    .social-icons {
+    display: flex;
+    }
+    
+    .social-icons li {
+    margin-right: 10px;
+    }
+    
+    .newsletter-form {
+    display: flex;
+    margin-top: 10px;
+    }
+    
+    .newsletter-form input {
+    padding: 8px;
+    flex: 1;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    }
+    
+    .newsletter-form button {
+    background-color:rgb(34,34,34);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    }
+    
+    .newsletter-form button:hover {
+    background-color: #8a5140;
+    }
+    
+    .footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    margin-top: 20px;
+    }
+    
+    .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .footer-bottom p, .footer-bottom-links a {
+    font-size: 12px;
+    }
+    
+    .footer-bottom-links a {
+    margin-left: 10px;
+    color: #fff;
+    }
+    
+    .footer-bottom-links a:hover {
+    text-decoration: underline;
+    }
+    @media  (max-width: 1100px) {
+      .nav_product_hide{
+        position: absolute;
+        right: 0;
+        width: 600px;
+        }
+    .navigation{
+      background-color: white;
+      padding: 10px;
+     
+    }
+    #navbarNav{
+      right: 0;
+      top:60px;
+      position: absolute;
+    }
+    .navigation li{
+      padding: 10px;
+    }
+    .navigation li:hover{
+      background-color: rgb(254,204,189);
+    }
+    .footer-section{
+      width: 100%;
+    }
+  }
+  .nav_product_hide *{
+    width: 100%;
+  }
+  @media (max-width:600px){
+    .sc600{
+      display: flex;
+    }
+  
+    .sc600{
+      flex:1;
+      width: 100%;
+    }
+    .nav_product_hide{
+      flex-direction: column;
+      width: 100%;
+      height: fit-content;
+    }
+  }

@@ -1,0 +1,115 @@
+@{
+    ViewData["Title"] = "Add";
+}
+@model Shop.Models.Address;
+<form asp-action="Add" asp-area="Customer" asp-controller="Address" class="w-50 mx-auto border py-3 px-2"  style="min-height: 300px;">
+    <div class="container-Err">
+        <span asp-validation-for="ProvinceCode"></span>
+        <span asp-validation-for="DistrictCode"></span>
+        <span asp-validation-for="WardCode"></span>
+    </div>
+    <div class="d-flex mb-3">
+        <div class="col">
+            <input type="hidden" id="provinceName" asp-for="ProvinceName">
+            <label asp-for="ProvinceCode"> Tỉnh/TP</label>
+            <select class="form-select" asp-for="ProvinceCode" id="province">
+            </select>
+        </div>
+        <div class="col">
+            <input type="hidden" id="districtName" asp-for="DistrictName">
+            <label asp-for="DistrictCode"> Quận/Huyện</label>
+            <select class="form-select" asp-for="DistrictCode" id="district">
+            </select>
+        </div>
+        <div class="col">
+            <input type="hidden" id="wardName" asp-for="WardName">
+            <label asp-for="WardCode"> Phường/Xã</label>
+            <select class="form-select" asp-for="WardCode" id="ward">
+            </select>
+        </div>
+        <input type="hidden"asp-for="UserId" value="Default">
+    </div>
+    <div class="col">
+        <label asp-for="PhoneNumber">Số điện thoại</label>
+        <input class="form-control" asp-for="PhoneNumber">
+    </div>
+    <div class="col mb-3">
+        <label asp-for="Note">Chú thích</label>
+        <textarea class="form-control" asp-for="Note" cols="30" rows="3" placeholder="Sự vật dễ nhận ra: Số nhà, 300m trước nhà có cây dương liễu...hoặc chi tiết hơn"></textarea>
+    </div>
+    <div class="col">
+        <button type="submit" class="btn btn-danger">Thêm địa chỉ</button>
+    </div>
+</form>
+@section Scripts{
+    <script>
+
+// 1. what is API
+// 2. How do I call API
+// 3. Explain code
+const host = "https://provinces.open-api.vn/api/";
+var callAPI = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data, "province");
+            console.log(response.data)
+        });
+}
+callAPI('https://provinces.open-api.vn/api/?depth=1');
+var callApiDistrict = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data.districts, "district");
+        });
+}
+var callApiWard = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data.wards, "ward");
+        });
+}
+
+var renderData = (array, select) => {
+    let row = ' <option disable value="">Chọn</option>';
+    array.forEach(element => {
+        row += `<option value="${element.code}">${element.name}</option>`
+    });
+    document.querySelector("#" + select).innerHTML = row;
+}
+
+$("#province").change(() => {
+    callApiDistrict(host + "p/" + $("#province").val() + "?depth=2");
+    var province=$("#province option:selected").text();
+    var provinceName=document.querySelector("#provinceName");
+    provinceName.value=province;
+    console.log(provinceName)
+    printResult();
+});
+$("#district").change(() => {
+    callApiWard(host + "d/" + $("#district").val() + "?depth=2");
+    var district=$("#district option:selected").text();
+    var districtName=document.querySelector("#districtName");
+    districtName.value=district;
+    console.log(districtName)
+    printResult();
+});
+$("#ward").change(() => {
+    var ward=$("#ward option:selected").text();
+    var wardName=document.querySelector("#wardName");
+    wardName.value=ward;
+    console.log(wardName)
+    printResult();
+})
+var printResult = () => {
+    if ($("#district").val() != "" && $("#province").val() != "" &&
+        $("#ward").val() != "") {
+        let result = $("#province option:selected").text() +
+            " - " + $("#district option:selected").text() + " - " +
+            $("#ward option:selected").text();
+        $("#result").text(result)
+        //document.querySelector("#address").value=result;
+    }
+
+}
+    </script>
+}

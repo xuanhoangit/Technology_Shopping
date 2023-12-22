@@ -1,0 +1,323 @@
+@{
+    ViewData["Title"] = "Thanh toan";
+}
+@model Shop.ModelProduct.DisplayCheckout;
+ <div id="table_product" class="container mt-3" style="min-height: 300px;">
+   <form id="myform" asp-action="ConfirmCheckOut" asp-area="Customer" asp-controller="Order">
+  <div class="d-lg-flex justify-content-between mb-5">
+    <div class="cart-sm col-lg-8 col-sm-12">
+      @foreach(var item in Model.ListCart){
+        string checkbox="check"+item.Id.ToString();
+        string subtotalId="subtotal"+checkbox;
+        string unitPrice="unitPrice"+item.ProductId.ToString();
+        string hidden="hidden"+item.Id.ToString();
+        string quantity="quantity"+item.Id.ToString();
+      <div class="mb-3 item-sm border px-2 py-2" data-price="@item.Price" id="@hidden">
+          <input type="hidden" name="itemCartId" id="@checkbox" value="@item.Id" class="checkbox" onchange="total()">
+        <div  style="" title="@item.ProductName">
+          <b>Sản phẩm</b><span>@item.ProductName</span>
+         </div>
+        <div>
+          <b>Số lượng</b><input type="number"  class="inputNumber"  onchange="updateTotal(this,'@checkbox','@item.Id')" min="1" value="@item.Quantity"></div>
+        <div class="">
+          <b>Giá</b><span id="@subtotalId" class="subtotal money">@(item.Price*item.Quantity) </span></div>
+        <div>
+          <b>Xóa</b><span  onclick="removeItem('@item.Id')"><i class="bi bi-trash text-danger"></i></span>
+          </div>
+      </div>
+      }
+    </div>
+
+   <div class="col-4 px-5 py-5 border-bottom rounded">
+    <div class="d-flex mb-3" style="font-size: 24px;">
+      <strong class="me-2" >Tổng tiền:</strong>
+      <span id="total" class="text-success" >0</span>
+    </div>
+    <span style="display:none" id="addressErrr" class="text-danger">Vui lòng chọn địa chỉ giao hàng</span>
+    <button class="btn btn-success" onclick="preventForm()" type="submit">Thanh toán</button>
+  </div>
+  </div>
+
+<div>
+            <span  class="btn btn-danger mb-3" onclick="ShowHideAddressForm(this)">Thêm địa chỉ nhận hàng mới</span>
+            <div id="addAddressDeliver" style="display: none;">
+              <div class="container-Err">
+                  <span asp-validation-for="Address.ProvinceCode"></span>
+                  <span asp-validation-for="Address.DistrictCode"></span>
+                  <span asp-validation-for="Address.WardCode"></span>
+              </div>
+              <div class="d-flex mb-3">
+                  <div class="col">
+                      <input type="hidden" id="provinceName" asp-for="Address.ProvinceName">
+                      <label asp-for="Address.ProvinceCode"> Tỉnh/TP</label>
+                      <select class="form-select" asp-for="Address.ProvinceCode" id="province">
+                      </select>
+                  </div>
+                  <div class="col">
+                      <input type="hidden" id="districtName" asp-for="Address.DistrictName">
+                      <label asp-for="Address.DistrictCode"> Quận/Huyện</label>
+                      <select class="form-select" asp-for="Address.DistrictCode" id="district">
+                      </select>
+                  </div>
+                  <div class="col">
+                      <input type="hidden" id="wardName" asp-for="Address.WardName">
+                      <label asp-for="Address.WardCode"> Phường/Xã</label>
+                      <select class="form-select" asp-for="Address.WardCode" id="ward">
+                      </select>
+                  </div>
+                  <input type="hidden"asp-for="Address.UserId" value="Default">
+              </div>
+              <div class="col">
+                  <label asp-for="Address.PhoneNumber">Số điện thoại</label>
+                  <input class="form-control" asp-for="Address.PhoneNumber">
+              </div>
+              <div class="col mb-3">
+                  <label asp-for="Address.Note">Chú thích</label>
+                  <textarea class="form-control" asp-for="Address.Note" cols="30" rows="3" placeholder="Sự vật dễ nhận ra: Số nhà, 300m trước nhà có cây dương liễu...hoặc chi tiết hơn"></textarea>
+              </div>
+              <div class="col">
+      </div>
+            </div>
+            <div id="selectAddressDeliver">
+    @if(Model.ListAddress.Count>0){ 
+              <h3 class="mb-3">Lựa chọn thông tin nhận hàng</h3>
+        <table class="table  px-3 py-3 border">
+            <thead>
+                <tr>
+                    <th class="col-1 text-center">Chọn</th>
+                    <th class="col-6">Địa chỉ giao hàng</th>
+                    <th class="col-2 text-center">Cập nhật địa chỉ</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                @foreach(var addr in Model.ListAddress){
+                    <tr>
+                        <td class="col-2 text-center"><input type="radio" class="InputRadio" name="addressId" value="@addr.Id"></td>
+                        <td class="" style="line-height: 0.7;">
+                            <p>@(addr.WardName + "-" + addr.DistrictName +"-"+ addr.ProvinceName)</p>
+                            <p>Số điện thoại: @addr.PhoneNumber</p>
+                            <p>Ghi chú : @addr.Note</p>
+                        </td>
+                        <td class="text-center">
+                            <a href="" class="btn"><i class="bi bi-pencil-square fs-2 text-warning"></i></a>
+                        </td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+  }
+            </div>
+    </div>
+        </form>
+   </div> 
+  @section Scripts {
+    <script>
+           var inputNumber=document.querySelectorAll(".inputNumber");
+        inputNumber.forEach(function (x){
+          x.style.width="60px";
+        })
+
+          function preventForm(){
+            var form=document.querySelector("#myform");
+            var ward=document.querySelector("#ward");
+            var ischecked=false;
+            var listChecked=document.querySelectorAll(".InputRadio")
+            listChecked.forEach( function (x){
+              if(x.checked){
+                ischecked=true;
+              }
+            })
+            console.log("checked"+ischecked)
+            console.log(ward.value=="")
+                form.addEventListener('submit', function(event) {
+            if(ward.value=="" && ischecked==false){
+                  event.preventDefault(); // Ngăn chặn hành động mặc định của sự kiện submit
+                  // Bạn có thể thêm mã xử lý khác ở đây nếu cần
+                  document.getElementById("addressErrr").style.display="block";
+              }
+              else{
+                form.submit();
+              }
+            });
+            
+          }
+
+          function ShowHideAddressForm(btn){
+            var add=document.querySelector("#addAddressDeliver");
+            var select=document.querySelector("#selectAddressDeliver");
+            console.log(add)
+            console.log(select)
+            if(add.style.display=="none"){
+                add.style.display="block";
+                select.style.display="none";
+                
+                btn.innerHTML="Chọn địa chỉ cũ hơn"
+            }
+            else{
+              var listChecked=document.querySelectorAll(".InputRadio")
+                console.log(listChecked)
+                listChecked.forEach(function (x){
+                  x.checked=false;
+                })
+              add.style.display="none";
+              select.style.display="block";
+              btn.innerHTML="Thêm địa chỉ nhận hàng mới"
+            }
+            
+          }
+
+
+
+
+
+            function updateTotal(input,itemId,cartId) {
+        
+            var row = input.parentNode.parentNode;
+            var price = parseFloat(row.getAttribute('data-price'));
+            var quantity = parseInt(input.value);
+            var subtotal = price * quantity;
+            console.log("subtotal"+subtotal)
+            var formattedValue = subtotal.toLocaleString('vi-VN');
+            row.querySelector('.subtotal').textContent = formattedValue+"đ";
+
+            total()
+
+            $.ajax({
+              type:"POST",
+              url:"/Customer/Cart/ChangeQuantity",
+              data:{id:cartId,n:quantity},
+              success:function(){
+                  
+              }
+            })
+        }
+        function total(){
+          var totalItem=0;
+            
+            var checkbox=document.querySelectorAll(".checkbox");
+            //console.log("totaol"+totalItem)
+            checkbox.forEach(function (x){
+             
+                var subtotals = document.querySelector('#subtotal'+x.id);
+                //console.log("item"+subtotals.innerText.replace(/[đ.]/g, ''))
+                totalItem+=parseInt(subtotals.innerText.replace(/[đ.]/g, ''))
+                 //console.log("toal"+totalItem)
+                
+            
+            })
+            if(totalItem==0){
+              totalItem="0"
+            }
+            //totalItem+=parseFloat(subtotals.innerText.replace(/[đ.]/g, ''));
+            document.getElementById('total').innerHTML = totalItem.toLocaleString('vi-VN')+"đ";
+        }
+        total()
+
+      
+            function removeItem(id){
+              document.querySelector("#hidden"+id).innerHTML="";
+              total()
+              $.ajax({
+              type:"POST",
+              url:"/Customer/Cart/DeleteItem",
+              data:{id:id},
+              success:function(){
+                
+                  GetCartCount(function (count){
+                    if(count==0){
+                      @* var product=document.querySelector("#table_product")
+                      product.innerHTML="Chưa có sản phẩm nào";
+                      console.log(product.innerHTML); *@
+                      alert("Giỏ hàng không còn sản phẩm nào bạn sẽ được quay trở lại trang chủ")
+                      window.location.href="http://localhost:5054/Customer/Home"
+                    }
+                  })
+              }
+            })
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 1. what is API
+// 2. How do I call API
+// 3. Explain code
+const host = "https://provinces.open-api.vn/api/";
+var callAPI = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data, "province");
+            console.log(response.data)
+        });
+}
+callAPI('https://provinces.open-api.vn/api/?depth=1');
+var callApiDistrict = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data.districts, "district");
+        });
+}
+var callApiWard = (api) => {
+    return axios.get(api)
+        .then((response) => {
+            renderData(response.data.wards, "ward");
+        });
+}
+
+var renderData = (array, select) => {
+    let row = ' <option disable value="">Chọn</option>';
+    array.forEach(element => {
+        row += `<option value="${element.code}">${element.name}</option>`
+    });
+    document.querySelector("#" + select).innerHTML = row;
+}
+
+$("#province").change(() => {
+    callApiDistrict(host + "p/" + $("#province").val() + "?depth=2");
+    var province=$("#province option:selected").text();
+    var provinceName=document.querySelector("#provinceName");
+    provinceName.value=province;
+    console.log(provinceName)
+    printResult();
+});
+$("#district").change(() => {
+    callApiWard(host + "d/" + $("#district").val() + "?depth=2");
+    var district=$("#district option:selected").text();
+    var districtName=document.querySelector("#districtName");
+    districtName.value=district;
+    console.log(districtName)
+    printResult();
+});
+$("#ward").change(() => {
+    var ward=$("#ward option:selected").text();
+    var wardName=document.querySelector("#wardName");
+    wardName.value=ward;
+    console.log(wardName)
+    printResult();
+})
+var printResult = () => {
+    if ($("#district").val() != "" && $("#province").val() != "" &&
+        $("#ward").val() != "") {
+        let result = $("#province option:selected").text() +
+            " - " + $("#district option:selected").text() + " - " +
+            $("#ward option:selected").text();
+        $("#result").text(result)
+        //document.querySelector("#address").value=result;
+    }
+
+}
+    </script>
+  }
+ 

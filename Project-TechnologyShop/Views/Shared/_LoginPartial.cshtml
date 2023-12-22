@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Users> SignInManager
+@inject UserManager<Users> UserManager
+
+<div class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{       
+    var user=await UserManager.FindByEmailAsync(User.Identity.Name);
+    string ten=user.Ho+" "+user.Ten;
+
+    <div class="nav-item d-flex login justify-content-between" style="cursor: context-menu;" id="showMenuAccount">
+        <span style="cursor: pointer;"><i class="bi bi-person-circle"></i> @ten</span>
+    </div>
+    <div class="nav-item bg-white border hidden" id="logout">
+        <li class="">
+            <a  class="" asp-area="Identity" asp-page="/Account/Manage/Index">Cài đặt tài khoản</a>
+        </li>
+        <li class="">
+            <form  class="" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button  type="submit" class="" style="border:none;background:none" >Đăng xuất</button>
+            </form>
+        </li>
+    </div>
+}
+else
+{
+    <li class="nav-item  login">
+        <a class="login" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
+    </li>
+}
+</div>

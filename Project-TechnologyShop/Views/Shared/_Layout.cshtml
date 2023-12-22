@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Apache</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Shop.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/home.css">
+    <link rel="stylesheet" href="~/css/register.css">
+    <link rel="stylesheet" href="~/css/loginPartial.css">
+    <link rel="stylesheet" href="~/css/cart.css">
+    <link rel="stylesheet" href="~/css/displayproductbycategory.css">
+    @* <link rel="stylesheet" href="~/css/productDetailCs.css"> *@
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> *@
+
+    <!-- Font Awesome CSS -->
+    <script src="https://kit.fontawesome.com/237de98304.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+    .carousel-indicators li{
+    height: 10px;
+    width: 10px;
+    background-color: rgb(202, 62, 52);
+    border-radius: 50%;
+    }
+    .carousel-item {
+    text-align: center;
+    transition: transform 0.1s ease-in-out;
+    }
+
+    .sale{
+      color:rgb(220,53,69);
+    }
+    .price{
+      font-size: 12px;
+      font-weight: 400;
+      text-decoration: line-through;
+    }
+    .cart i:hover,.order i:hover{
+        
+        color: rgb(220,53,69);
+        -webkit-text-stroke: 2px white;
+    }
+    .cart a:hover{
+      text-decoration: none;
+      color: #fff;
+    }
+    #cartItemCount,#orderCount{
+      padding: 1px 5px;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: bold;
+    }
+}
+    
+    </style>
+    
+</head>
+<body>
+<header class="bg-danger container-header ">
+  <nav class="navbar navbar-expand-lg navbar-light hadder sc600">
+    <div class="  sc600 parentsc600">
+      <a href="/Customer/Home/Index" class="navbar-brand text-white pe-2"  style="text-decoration: none;-webkit-text-stroke:1px green;font-weight:700"><img src="~/images/Slides/logoNoel.png" class="" width="50px" height="30px" style="object-fit: cover;" alt="" srcset="">Merichitmet</a>
+      <span class=" sc600" style="">
+        <span class="cart navbar-brand mx-3"><a href="/Customer/Cart/Index"><i class="fa-solid fa-cart-shopping fa-bounce" style="color: #511f1f;"></i><span id="cartItemCount" class=" bg-dark mx-2 text-white border position-absolute">0</span></a></span>
+        <span class="order navbar-brand mx-3"><a href="/Customer/Order"><i class=" fa-solid fa-truck fa-flip-horizontal" style="color: #511f1f;"></i><span id="orderCount" class=" bg-dark mx-2 text-white border position-absolute">0</span></a></span>
+      </span>
+    </div>
+     
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " style="z-index:100;" id="navbarNav">
+      <ul class="navbar-nav ml-auto navigation d-flex">
+        <li class="nav-item my-auto">
+          <a class="" href="/Customer/Home/Index"><i class="fa-solid fa-house"></i></a>
+        </li>
+         <li class="nav-item  my-auto" id="nav_hover">
+               <span id="showCate" onclick="ShowCate();" style="cursor: context-menu;"> Danh mục sản phẩm <i class='fas fa-angle-down ms-2'></i></span>
+              <div class="nav_product_hide collapse" id="navCollapse">
+               
+              </div>
+            </li>
+              
+      </ul>
+    </div>
+     <div>
+        <partial name="_LoginPartial">
+    </div>
+  </nav>
+</header>
+
+    <div class="mb-3  position-relative">
+        <main role="main" class=" ">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="hard-footer position-relative">
+    <div class="container">
+      <div class="footer-content d-lg-flex d-sm-block">
+        <div class="footer-section ">
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: (123) 456-7890</p>
+          <address>
+            123 Main Street, Cityville, State, 12345
+          </address>
+        </div>
+  
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul class="social-icons">
+            <li><a href="#" class="fa fa-facebook"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-linkedin"></a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for updates.</p>
+          <form class="newsletter-form d-flex">
+            <input type="email" placeholder="Your Email">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="container-footer">
+        <div class="footer-bottom-content">
+          <p>&copy; 2023 Your Company. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @* CallApi *@
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @* End CallApi *@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @* <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> *@
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+      @{string a="@keyframes";
+        string media="@media ";}
+      function ShowCate(){
+        var toggleListCate = document.getElementById('navCollapse');
+        if(toggleListCate.style.display=="none"){
+          toggleListCate.style.display="flex"
+          toggleListCate.style.flexWrap="wrap"
+          toggleListCate.style.fontSize="14px";
+          toggleListCate.style.fontWeight="400"
+          toggleListCate.style.padding="20px"
+        }
+        else{
+           toggleListCate.style.display="none"
+        }
+      }
+      function GetDataCategory(){
+        $.ajax(
+          {
+            url:"/Customer/Home/IndexData",
+            type:"GET",
+            success:function(data){
+              var container=document.querySelector("#navCollapse");
+              //container.setAttribute("class","d-flex flex-wrap")
+              var count=data.length;
+              console.log("ad"+data[0].name)
+                for(let i=0;i<count;i++){
+                  var a=document.createElement("a");
+                  a.href="/Customer/Product/DisplayProductByCategory?CategoryId="+data[i].id
+                  a.style.color="rgb(59, 84, 107)";
+                  a.style.textDecoration="none"
+                  a.style.minWidth="25%"
+                  a.setAttribute("class","py-2")
+                  
+                   // Sự kiện khi con trỏ chuột vào
+                  a.addEventListener('mouseenter', function () {
+                      this.style.textDecoration="underline"
+                  });
+
+                  // Sự kiện khi con trỏ chuột rời khỏi
+                  a.addEventListener('mouseleave', function () {
+                      this.style.textDecoration="none"
+                  });
+                  a.innerHTML=data[i].name;
+                  container.appendChild(a)
+                }
+
+              }
+           
+          }
+        )       
+      }
+      GetDataCategory()
+
+
+       function AddToCart(id){
+        $.ajax({
+        type: "POST",
+        url: "/Customer/Cart/AddToCart",
+        data:{id:id},
+        success: function (){
+          alert("Sản phẩm đã được thêm vào giỏ hàng")
+          GetCartCount();
+        },
+        error: function (error) {
+                window.location.href = "/Identity/Account/Login";
+        }
+        });
+    }
+
+    //animtae
+               document.addEventListener("DOMContentLoaded", function () {
+            const style = document.createElement("style");
+            style.innerHTML = `
+ 
+                .snowflake {
+                    top:0;
+                    position: fixed;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    animation: snowfall linear infinite;
+                    z-index:1000;
+                    color:white;
+                    -webkit-text-stroke:0.3px rgb(1,119,235);
+                    font-size:28px;
+                }
+
+                @a snowfall {
+                    to {
+                        transform: translateY(100vh);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+          console.log(style)
+            const numberOfSnowflakes = 20;
+
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                createSnowflake();
+            }
+
+            function createSnowflake() {
+                const snowflake = document.createElement("div");
+                snowflake.className = "snowflake fa-regular fa-snowflake";
+                document.body.appendChild(snowflake);
+
+                const randomX = Math.random() * window.innerWidth;
+                const randomDelay = Math.random() * 5;
+                const randomDuration = 5 + Math.random() * 5;
+
+                snowflake.style.left = `${randomX}px`;
+                snowflake.style.animationDelay = `-${randomDelay}s`;
+                snowflake.style.animationDuration = `${randomDuration}s`;
+            }
+        });
+      
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

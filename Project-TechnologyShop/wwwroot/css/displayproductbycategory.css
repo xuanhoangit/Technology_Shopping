@@ -1,0 +1,9 @@
+.search:hover {
+    background-color: rgb(220,53,69);
+    height: 100%;
+}
+@media (max-width:600px){
+    .listBrandProduct{
+        justify-content: space-between;
+    }
+}
